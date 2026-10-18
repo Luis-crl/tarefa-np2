@@ -1,0 +1,46 @@
+
+algoritmo "Selection Sort"
+
+var
+   numeros: vetor[1..10] de inteiro
+   i, j, menor, auxiliar: inteiro
+
+inicio
+
+   escreval("=== SELECTION SORT ===")
+   escreval("Digite 10 numeros inteiros:")
+
+   para i de 1 ate 10 faca
+      escreval("Digite o ", i , " numero: ")
+      leia(numeros[i])
+   fimpara
+
+  
+   para i de 1 ate 9 faca
+
+      menor <- i
+
+      para j de i + 1 ate 10 faca
+         se numeros[j] < numeros[menor] entao
+            menor <- j
+         fimse
+      fimpara
+
+      se menor <> i entao
+         auxiliar <- numeros[i]
+         numeros[i] <- numeros[menor]
+         numeros[menor] <- auxiliar
+      fimse
+
+   fimpara
+
+   escreval("")
+   escreval("Numeros em ordem crescente:")
+
+   para i de 1 ate 10 faca
+      escreva(numeros[i], " ")
+   fimpara
+
+   escreval("")
+
+fimalgoritmo
